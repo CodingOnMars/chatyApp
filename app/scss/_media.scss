@@ -2,14 +2,145 @@
     .logo {
         font-size: 28px;
     }
+
+    .menu-burger {
+        display: none;
+    }
+
+    .menu {
+        &__list--active {
+            display: flex;
+        }
+
+        &__item {
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 0;
+                margin-right: 24px;
+            }
+        }
+
+        &__link {
+            font-size: 16px;
+        }
+    }
+
+    .menu-buttons {
+        display: flex;
+
+        &__item {
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 0;
+                margin-right: 11px;
+            }
+        }
+
+        &__btn {
+            width: unset;
+        }
+    }
+
+    .footer {
+        &__items {
+            flex-direction: row;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-right: 50px;
+                margin-bottom: 0px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 32px;
+        }
+    }
 }
 
 @media (min-width: 1024px) {
+    .menu {
+        &__item {
+            &:not(:last-child) {
+                margin-right: 54px;
+            }
+        }
+
+        &__link {
+            font-size: 20px;
+            line-height: 130%;
+        }
+    }
+
     .title {
         font-size: 50px;
     }
 
     .subtitle {
         font-size: 24px;
+    }
+
+    .footer {
+        &__item {
+            &:not(:last-child) {
+                margin-right: 126px;
+            }
+        }
+
+        &__list-item {
+            &:not(:last-child) {
+                margin-bottom: 14px;
+            }
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .login-btn {
+        transition: color .3s ease, background-color .3s ease-in-out;
+
+        &:hover {
+            color: $footer-gray;
+            background-color: $hover-purple;
+        }
+    }
+
+    .register-btn,
+    .connect-btn {
+        transition: background-color .3s ease-in-out;
+    }
+
+    .register-btn {
+        border: 1px solid transparent;
+
+        &:hover {
+            color: $accent-color;
+            background-color: $footer-gray;
+            border: 1px solid $accent-color;
+        }
+    }
+
+    .menu__link,
+    .footer__list-link {
+        transition: color .3s ease-in-out;
+    }
+
+    .menu__link:hover {
+        color: $hover-purple;
+    }
+
+    .connect-btn:hover {
+        background-color: $hover-blue;
+    }
+
+    .footer__list-link:hover {
+        color: $hover-blue;
     }
 }

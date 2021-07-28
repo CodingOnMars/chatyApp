@@ -1,0 +1,143 @@
+.header {
+    padding-top: 32px;
+    padding-bottom: 30px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: flex;
+    }
+}
+
+.menu {
+    &__list {
+        display: none;
+
+        &--active {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background-color: $burger-bg;
+        }
+    }
+
+    &__item {
+        &:first-child {
+            padding-top: 90px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__link {
+        font-size: 20px;
+        line-height: 130%;
+
+        &--active {
+            font-weight: 700;
+            color: $accent-color;
+        }
+    }
+}
+
+.menu-burger {
+    position: relative;
+    border: none;
+    padding: 0;
+    width: 40px;
+    height: 20px;
+    color: $hover-blue;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        transition: transform .3s ease-in-out, top .3s ease-in-out;
+    }
+
+    &::before {
+        top: 0;
+        background-color: $accent-color;
+    }
+
+    &::after {
+        top: calc(100% - 2px);
+        background-color: $active-blue;
+    }
+
+    &__line {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 2px;
+        background-color: currentColor;
+        transform: translateY(-50%);
+        transition: transform .3s ease-in-out;
+    }
+
+    &--active {
+        &::before {
+            top: 50%;
+            transform: rotate(45deg);
+            transition: transform .3s ease-in-out, top .3s ease-in-out;
+        }
+
+        &::after {
+            top: 50%;
+            background-color: $accent-color;
+            transform: rotate(-45deg);
+            transition: transform .3s ease-in-out, top .3s ease-in-out, background-color .3s ease;
+        }
+
+        .menu-burger__line {
+            transform: scale(0);
+            transition: transform .3s ease-in-out;
+        }
+    }
+}
+
+.menu-buttons {
+    display: none;
+
+    &--active {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: $burger-bg;
+    }
+
+    &__item {
+        &:first-child {
+            padding-top: 100px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__btn {
+        width: 70%;
+    }
+}

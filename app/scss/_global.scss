@@ -1,8 +1,19 @@
-.body {
+html,
+body {
+    height: 100%;
+}
+
+body {
     font-family: 'Noto Sans', sans-serif;
     font-size: 16px;
     line-height: 162%;
     color: $primary-color;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .container {
@@ -27,4 +38,43 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 140%;
+}
+
+.login-btn,
+.register-btn,
+.connect-btn {
+    padding: 10px 35px;
+    font-weight: 700;
+    line-height: 125%;
+    text-align: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.login-btn {
+    color: $accent-color;
+    background-color: $secondary-color;
+}
+
+.register-btn,
+.connect-btn {
+    color: white;
+    background-color: $accent-color;
+}
+
+.connect-btn {
+    font-size: 18px;
+    line-height: 133%;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.hide {
+    display: none;
 }
