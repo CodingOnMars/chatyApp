@@ -1,0 +1,31 @@
+.hero {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: $burger-bg;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__title,
+    &__desc {
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        max-width: 273px;
+    }
+
+    &__desc {
+        max-width: 330px;
+        font-size: 18px;
+        line-height: 156%;
+    }
+
+    &__btn {
+        margin-bottom: 48px;
+    }
+}
