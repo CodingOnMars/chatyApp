@@ -47,6 +47,14 @@
         }
     }
 
+    .hero {
+        padding-top: 40px;
+
+        &__container {
+            flex-direction: row;
+        }
+    }
+
     .footer {
         &__items {
             flex-direction: row;
@@ -85,6 +93,20 @@
 
     .subtitle {
         font-size: 24px;
+    }
+
+    .hero {
+        // background: linear-gradient(rgba(242, 247, 255, 0.8), rgba(242, 247, 255, 0.9)), url(../images/hero_bg-desktop.svg);
+        // background-repeat: no-repeat;
+        // background-size: contain;
+
+        &__title {
+            max-width: 426px;
+        }
+
+        &_desc {
+            max-width: 517px;
+        }
     }
 
     .footer {
