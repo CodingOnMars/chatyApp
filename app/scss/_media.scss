@@ -55,6 +55,19 @@
         }
     }
 
+    .about {
+        &__inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__items {
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+    }
+
     .footer {
         &__items {
             flex-direction: row;
@@ -109,6 +122,16 @@
         }
     }
 
+    .about {
+        &__items {
+            margin-right: 76px;
+        }
+
+        &__item {
+            max-width: 428px;
+        }
+    }
+
     .footer {
         &__item {
             &:not(:last-child) {
@@ -123,6 +146,15 @@
         }
     }
 }
+
+// @media (min-width: 1366px) {
+//     .about {
+//         &__title {
+//             margin-bottom: 68px;
+//         }
+//     }
+
+// }
 
 @media (hover: hover) and (pointer: fine) {
     .login-btn {
