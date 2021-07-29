@@ -1,0 +1,60 @@
+.about {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-color: $burger-bg;
+
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+    }
+
+    &__item {
+        position: relative;
+        max-width: 331px;
+        padding-left: 72px;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        &::before {
+            position: absolute;
+            left: -10px;
+            transform: scale(0.7);
+        }
+
+        &--icon-1 {
+            &::before {
+                content: url('../images/about_icon-1.svg');
+            }
+        }
+
+        &--icon-2 {
+            &::before {
+                content: url('../images/about_icon-2.svg');
+            }
+        }
+
+        &--icon-3 {
+            &::before {
+                content: url('../images/about_icon-3.svg');
+            }
+        }
+
+        &--icon-4 {
+            &::before {
+                content: url('../images/about_icon-4.svg');
+            }
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+}
