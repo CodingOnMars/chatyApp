@@ -132,6 +132,12 @@
         }
     }
 
+    .plans {
+        &__items {
+            flex-direction: row;
+        }
+    }
+
     .footer {
         &__item {
             &:not(:last-child) {
