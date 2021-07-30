@@ -75,6 +75,29 @@ body {
     color: $accent-color;
 }
 
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & button {
+        margin: 24px 12px;
+        width: 10px;
+        height: 12px;
+        font-size: 0;
+        background: none;
+        border-radius: 50%;
+        border: 2px solid $accent-color;
+        opacity: .6;
+    }
+}
+
+.slick-active button {
+    background-color: $accent-color;
+    border: 2px solid transparent;
+    opacity: 1;
+}
+
 .footer {
     flex: 0 0 auto;
 }

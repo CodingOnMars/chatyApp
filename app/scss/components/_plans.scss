@@ -1,0 +1,66 @@
+.plans {
+    padding-top: 54px;
+    padding-bottom: 60px;
+
+    &__title,
+    &__subtitle {
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        margin-bottom: 32px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    max-width: 330px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: $alice-blue;
+
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    &__title,
+    &__text {
+        font-weight: 700;
+    }
+
+    &__title {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 24px;
+        background-color: $plan-bg;
+    }
+
+    &__text {
+        margin-top: 30px;
+        margin-bottom: 32px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 28px;
+    }
+
+    &__value {
+        margin-bottom: 46px;
+    }
+
+    &__btn {
+        align-self: center;
+        margin-top: auto;
+        padding: 10px 20px;
+    }
+}
