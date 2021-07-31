@@ -10,7 +10,7 @@ menuBurger.addEventListener('click', () => {
 });
 
 // Slider
-$('.plans__items').slick({
+$('.slider').slick({
 	arrows: false,
 	dots: true,
 	infinite: false,

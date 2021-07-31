@@ -132,10 +132,17 @@
         }
     }
 
-    .plans {
-        &__items {
-            flex-direction: row;
-        }
+    .plans__items,
+    .setup__items {
+        flex-direction: row;
+    }
+
+    .setup__items {
+        justify-content: space-evenly;
+    }
+
+    .setup__text {
+        margin-bottom: 50px;
     }
 
     .footer {

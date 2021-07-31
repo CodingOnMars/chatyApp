@@ -75,6 +75,17 @@ body {
     color: $accent-color;
 }
 
+.slick-track {
+    display: flex;
+
+    .slick-slide {
+        display: flex;
+        justify-content: center;
+        float: none;
+        height: auto;
+    }
+}
+
 .slick-dots {
     display: flex;
     justify-content: center;
