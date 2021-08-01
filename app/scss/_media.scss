@@ -68,6 +68,11 @@
         }
     }
 
+    .reviews {
+        padding-bottom: 60px;
+        background-size: 95px;
+    }
+
     .footer {
         &__items {
             flex-direction: row;
@@ -142,7 +147,22 @@
     }
 
     .setup__text {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+    }
+
+    .reviews {
+        padding-bottom: 80px;
+        background-size: 120px;
+
+        &__items {
+            flex-direction: row;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-right: 50px;
+            }
+        }
     }
 
     .footer {
