@@ -1,0 +1,88 @@
+.reviews {
+    padding-top: 70px;
+    padding-bottom: 51px;
+    background-color: $burger-bg;
+    background-image: url(../images/quote-mark.svg);
+    background-repeat: no-repeat;
+    background-size: 54px;
+    background-position: 90% 2%;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 327px;
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__top {
+        position: relative;
+        height: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: $white;
+        box-shadow: 0px 10px 20px $plan-bg;
+    }
+
+    &__subtitle,
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 156%;
+    }
+
+    &__subtitle {
+        margin-bottom: 8px;
+    }
+
+    &__text,
+    &__company {
+        font-size: 14px;
+        line-height: 171%;
+    }
+
+    &__text {
+        margin-bottom: 20px;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__img {
+        border-radius: 50%;
+    }
+
+    &__author {
+        margin-left: 16px;
+    }
+}
+
+.triangle {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    position: absolute;
+    bottom: -9px;
+    left: calc(50% - 10px);
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    transform: rotate(-45deg);
+    border-radius: 0 0 0 0.25rem;
+
+}
