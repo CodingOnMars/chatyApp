@@ -1,0 +1,53 @@
+.email {
+    padding-top: 54px;
+    padding-bottom: 54px;
+
+    &__inner {
+        padding: 40px 30px 20px;
+        background-color: $accent-color;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form {
+        margin-top: 24px;
+    }
+}
+
+.email-form {
+    &__title {
+        max-width: 280px;
+        margin-bottom: 16px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 133%;
+        color: $white;
+    }
+
+    &__line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__input {
+        max-width: 151px;
+        padding: 14px 16px;
+        font-size: 15px;
+        background-color: $burger-bg;
+        border: none;
+        border-radius: 5px 0px 0px 5px;
+    }
+
+    &__btn {
+        padding: 14px 24px;
+        font-weight: 700;
+        font-size: 14px;
+        color: $white;
+        background-color: $primary-color;
+        border-radius: 0px 5px 5px 0px;
+    }
+}
