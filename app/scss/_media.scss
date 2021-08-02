@@ -73,6 +73,31 @@
         background-size: 95px;
     }
 
+    .email {
+        &__inner {
+            padding: 50px 20px 0 30px;
+        }
+
+        &__items {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        &__form {
+            margin-left: 30px;
+        }
+    }
+
+    .email-form {
+        &__title {
+            margin-bottom: 32px;
+        }
+
+        &__input {
+            max-width: 210px;
+        }
+    }
+
     .footer {
         &__items {
             flex-direction: row;
@@ -142,6 +167,12 @@
         flex-direction: row;
     }
 
+    .price {
+        &:not(:last-child) {
+            margin-bottom: 0px;
+        }
+    }
+
     .setup__items {
         justify-content: space-evenly;
     }
@@ -161,8 +192,13 @@
         &__item {
             &:not(:last-child) {
                 margin-right: 50px;
+                margin-bottom: 0;
             }
         }
+    }
+
+    .email-form__input {
+        max-width: 220px;
     }
 
     .footer {
