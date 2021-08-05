@@ -1,0 +1,98 @@
+.popup-login {
+    position: fixed;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -22%);
+    z-index: 10;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 70px;
+    background-color: $white;
+
+
+    &__title {
+        margin-bottom: 32px;
+        font-weight: 700;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    &__title,
+    &__link {
+        color: $accent-color;
+    }
+
+    &__input {
+        max-width: 340px;
+        margin-bottom: 10px;
+        padding: 8px 20px;
+        color: $primary-color;
+        background-color: $input-color;
+        border: none;
+        border-radius: 5px;
+    }
+
+    &__input--error {
+        background-color: $error-bg;
+        border: 1px solid $red-color;
+    }
+
+    &__error {
+        display: none;
+        position: relative;
+        padding-bottom: 10px;
+        padding-left: 18px;
+        font-size: 12px;
+        color: $error-text;
+
+        &::before {
+            content: url(../images/error-icon.svg);
+            position: absolute;
+            top: 3px;
+            left: 0;
+        }
+
+        &--active {
+            display: inline-block;
+        }
+    }
+
+    &__link {
+        margin-left: auto;
+        font-size: 12px;
+        line-height: 133%;
+    }
+
+    &__btn {
+        margin-top: 50px;
+    }
+
+    &__btn-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        width: 20px;
+        height: 30px;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 30px;
+            background-color: $accent-color;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+}
