@@ -258,6 +258,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="popup-login hidden">
+                <form class="form login-form">
+                    <h2 class="form__title login-form__title">Вход</h2>
+                    <input class="form__input login-form__input" type="tel" placeholder="Телефон" data-login-phone>
+                    <span class="form__error" data-phone-error>Введите номер в формате +7(ххх)-ххх-хх-хх</span>
+                    <input class="form__input login-form__input" type="password" placeholder="Пароль"
+                        data-login-password>
+                    <span class="form__error" data-password-error>Введите пароль</span>
+                    <a class="form__link login-form__link">Напомнить пароль</a>
+                    <button type="submit" class="form__btn login-form__btn btn-reset connect-btn">Войти</button>
+                    <a class="form__btn-close login-form__btn-close"></a>
+                </form>
+            </div>
+
+            <div class="overlay hidden"></div>
         </main>
 
         <footer class="footer">

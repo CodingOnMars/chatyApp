@@ -47,6 +47,10 @@
         }
     }
 
+    .form {
+        width: 480px;
+    }
+
     .hero {
         padding-top: 40px;
 
@@ -248,6 +252,10 @@
             background-color: $footer-gray;
             border: 1px solid $accent-color;
         }
+    }
+
+    .login-form__btn-close {
+        cursor: pointer;
     }
 
     .menu__link,
