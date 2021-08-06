@@ -12,10 +12,14 @@ menuBurger.addEventListener('click', () => {
 //////////////////////////////////////////////////////////////////////////////////
 
 // Authorisation
-// Open login form
+// Common classes
+const formInputs = document.querySelectorAll('.form__input');
+const formErrors = document.querySelectorAll('.form__error');
+const overlay = document.querySelector('.overlay');
+
+// Open/close login form
 const loginBtn = document.querySelector('.login-btn');
 const popupLogin = document.querySelector('.popup-login');
-const overlay = document.querySelector('.overlay');
 const btnCloseLoginForm = document.querySelector('.login-form__btn-close');
 
 const openLoginForm = () => {
@@ -30,17 +34,47 @@ const closeLoginForm = () => {
 	overlay.classList.add('hidden');
 };
 
-loginBtn.addEventListener('click', openLoginForm);
+loginBtn.addEventListener('click', () => {
+	openLoginForm();
+	clearErrors();
+});
 btnCloseLoginForm.addEventListener('click', closeLoginForm);
-overlay.addEventListener('click', closeLoginForm);
+
+// Open/close registration form
+const regBtn = document.querySelector('.register-btn');
+const popupReg = document.querySelector('.popup-reg');
+const btnCloseRegForm = document.querySelector('.reg-form__btn-close');
+
+const openRegForm = () => {
+	popupReg.classList.remove('hidden');
+	menuBurger.classList.add('hidden');
+	overlay.classList.remove('hidden');
+};
+
+const closeRegForm = () => {
+	popupReg.classList.add('hidden');
+	menuBurger.classList.remove('hidden');
+	overlay.classList.add('hidden');
+};
+
+regBtn.addEventListener('click', () => {
+	openRegForm();
+	clearErrors();
+});
+btnCloseRegForm.addEventListener('click', closeRegForm);
+
+// Close a form by clicking outside of the form
+overlay.addEventListener('click', () => {
+	closeLoginForm();
+	closeRegForm();
+});
 
 // Login form validation
 const loginForm = document.querySelector('.login-form');
-const loginPhone = document.querySelector('[data-login-phone]');
-const loginPassword = document.querySelector('[data-login-password]');
-const formErrors = document.querySelectorAll('.form__error');
-const phoneError = document.querySelector('[data-phone-error]');
-const passwordError = document.querySelector('[data-password-error]');
+const loginPhone = document.querySelector('#login-phone');
+const loginPassword = document.querySelector('#login-password');
+const phoneError = document.querySelector('#login-phone-error');
+const passwordError = document.querySelector('#login-password-error');
 
 loginForm.addEventListener('submit', e => {
 	clearErrors();
@@ -70,12 +104,72 @@ loginForm.addEventListener('submit', e => {
 	}
 });
 
+// Registration form validation
+const regForm = document.querySelector('.reg-form');
+const regPhone = document.querySelector('#reg-phone');
+const regEmail = document.querySelector('#reg-email');
+const regPassword = document.querySelector('#reg-password');
+const regPasswordConfirmation = document.querySelector(
+	'#reg-password-confirmation'
+);
+const regPhoneError = document.querySelector('#reg-phone-error');
+const regEmailError = document.querySelector('#reg-email-error');
+const regPasswordError = document.querySelector('#reg-password-error');
+const regPasswordConfirmationError = document.querySelector(
+	'#reg-password-confirmation-error'
+);
+
+regForm.addEventListener('submit', e => {
+	clearErrors();
+
+	let errorMessages = [];
+
+	if (regPhone.value < 11) {
+		errorMessages.push('Phone error');
+		regPhoneError.classList.add('form__error--active');
+		regPhone.classList.add('form__input--error');
+	} else {
+		regPhoneError.classList.remove('form__error--active');
+		regPhone.classList.remove('form__input--error');
+	}
+
+	if (regEmail.value < 1) {
+		errorMessages.push('Email error');
+		regEmailError.classList.add('form__error--active');
+		regEmail.classList.add('form__input--error');
+	} else {
+		emailError.classList.remove('form__error--active');
+		regEmail.classList.remove('form__input--error');
+	}
+
+	if (regPassword.value < 1) {
+		errorMessages.push('Password error');
+		regPasswordError.classList.add('form__error--active');
+		regPassword.classList.add('form__input--error');
+	} else {
+		regPasswordError.classList.remove('form__error--active');
+		regPassword.classList.remove('form__input--error');
+	}
+
+	if (regPasswordConfirmation.value !== regPassword.value) {
+		errorMessages.push('Passwords do not match');
+		regPasswordConfirmationError.classList.add('form__error--active');
+		regPasswordConfirmation.classList.add('form__input--error');
+	}
+
+	if (errorMessages.length > 0) {
+		e.preventDefault();
+	}
+});
+
 function clearErrors() {
 	formErrors.forEach(el => {
-		el.classList.remove('form__error---active');
+		el.classList.remove('form__error--active');
+	});
+	formInputs.forEach(el => {
+		el.classList.remove('form__input--error');
 	});
 }
-
 //////////////////////////////////////////////////////////////////////////////////
 
 // Slider
