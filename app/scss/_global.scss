@@ -11,6 +11,10 @@ body {
     color: $primary-color;
 }
 
+body.lock {
+    overflow: hidden;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -95,7 +99,7 @@ body {
     & button {
         margin: 24px 12px;
         width: 10px;
-        height: 12px;
+        height: 15px;
         font-size: 0;
         background: none;
         border-radius: 50%;

@@ -8,6 +8,11 @@
     }
 
     .menu {
+        position: unset;
+        padding: 0;
+        width: unset;
+        height: unset;
+
         &__list--active {
             display: flex;
         }
@@ -40,10 +45,6 @@
                 margin-bottom: 0;
                 margin-right: 11px;
             }
-        }
-
-        &__btn {
-            width: unset;
         }
     }
 
@@ -259,7 +260,8 @@
     }
 
     .menu__link,
-    .footer__list-link {
+    .footer__list-link,
+    .copyright__link {
         transition: color .3s ease-in-out;
     }
 
@@ -271,7 +273,21 @@
         background-color: $hover-blue;
     }
 
+    .plans__item,
+    .setup__item {
+        transform: translateZ(0);
+        transition: transform 0.25s ease-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
     .footer__list-link:hover {
         color: $hover-blue;
+    }
+
+    .copyright__link:hover {
+        color: $red-color;
     }
 }
