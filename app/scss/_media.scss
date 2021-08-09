@@ -50,6 +50,7 @@
 
     .form {
         width: 480px;
+        padding: 70px;
     }
 
     .hero {
@@ -280,6 +281,16 @@
 
         &:hover {
             transform: scale(1.05);
+
+            .price__title {
+                color: $white;
+                background-color: $hover-purple;
+            }
+
+            .setup__number {
+                color: $white;
+                background-color: $active-blue;
+            }
         }
     }
 
