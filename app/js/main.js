@@ -19,56 +19,49 @@ const formFields = document.querySelectorAll('.form__field');
 const formErrors = document.querySelectorAll('.form__error');
 const overlay = document.querySelector('.overlay');
 
-// Open/close login form
+// Open/close login/registration forms
 const loginBtn = document.querySelector('.login-btn');
 const popupLogin = document.querySelector('.popup-login');
 const btnCloseLoginForm = document.querySelector('.login-form__btn-close');
 
-const openLoginForm = () => {
-	popupLogin.classList.remove('hidden');
+const regBtn = document.querySelector('.register-btn');
+const popupReg = document.querySelector('.popup-reg');
+const btnCloseRegForm = document.querySelector('.reg-form__btn-close');
+
+const openForm = popup => {
+	popup.classList.remove('hidden');
 	menuBurger.classList.add('hidden');
 	overlay.classList.remove('hidden');
 };
 
-const closeLoginForm = () => {
-	popupLogin.classList.add('hidden');
+const closeForm = popup => {
+	popup.classList.add('hidden');
 	menuBurger.classList.remove('hidden');
 	overlay.classList.add('hidden');
 };
 
 loginBtn.addEventListener('click', () => {
-	openLoginForm();
+	openForm(popupLogin);
 	clearErrors();
 });
-btnCloseLoginForm.addEventListener('click', closeLoginForm);
 
-// Open/close registration form
-const regBtn = document.querySelector('.register-btn');
-const popupReg = document.querySelector('.popup-reg');
-const btnCloseRegForm = document.querySelector('.reg-form__btn-close');
-
-const openRegForm = () => {
-	popupReg.classList.remove('hidden');
-	menuBurger.classList.add('hidden');
-	overlay.classList.remove('hidden');
-};
-
-const closeRegForm = () => {
-	popupReg.classList.add('hidden');
-	menuBurger.classList.remove('hidden');
-	overlay.classList.add('hidden');
-};
+btnCloseLoginForm.addEventListener('click', () => {
+	closeForm(popupLogin);
+});
 
 regBtn.addEventListener('click', () => {
-	openRegForm();
+	openForm(popupReg);
 	clearErrors();
 });
-btnCloseRegForm.addEventListener('click', closeRegForm);
+
+btnCloseRegForm.addEventListener('click', () => {
+	closeForm(popupReg);
+});
 
 // Close a form by clicking outside of the form
 overlay.addEventListener('click', () => {
-	closeLoginForm();
-	closeRegForm();
+	closeForm(popupLogin);
+	closeForm(popupReg);
 });
 
 // Login form validation
@@ -77,8 +70,8 @@ const loginPhone = document.querySelector('#login-phone');
 const loginPassword = document.querySelector('#login-password');
 
 loginForm.addEventListener('submit', e => {
-	let isPhoneValid = checkPhone(loginPhone);
-	isPasswordValid = checkLoginPassword(loginPassword);
+	let isPhoneValid = checkPhone(loginPhone),
+		isPasswordValid = checkLoginPassword(loginPassword);
 
 	let isFormValid = isPhoneValid && isPasswordValid;
 
