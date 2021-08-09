@@ -262,12 +262,16 @@
             <div class="popup popup-login hidden">
                 <form class="form login-form">
                     <h2 class="form__title login-form__title">Вход</h2>
-                    <input class="form__input login-form__input" type="tel" placeholder="Телефон" name="phone"
-                        id="login-phone">
-                    <span class="form__error" id="login-phone-error">Введите номер в формате +7(ххх)-ххх-хх-хх</span>
-                    <input class="form__input login-form__input" type="password" placeholder="Пароль"
-                        id="login-password">
-                    <span class="form__error" id="login-password-error">Введите пароль</span>
+                    <div class="form__field login-form__field">
+                        <input class="form__input login-form__input" type="tel" placeholder="Телефон" name="phone"
+                            id="login-phone">
+                        <small class="form__error"></small>
+                    </div>
+                    <div class="form__field login-form__field">
+                        <input class="form__input login-form__input" type="password" placeholder="Пароль"
+                            name="password" id="login-password">
+                        <small class="form__error"></small>
+                    </div>
                     <a class="form__link login-form__link">Напомнить пароль</a>
                     <button type="submit" class="form__btn login-form__btn btn-reset connect-btn">Войти</button>
                     <button class="form__btn-close login-form__btn-close btn-reset"></button>
@@ -277,18 +281,26 @@
             <div class="popup popup-reg hidden">
                 <form class="form reg-form">
                     <h2 class="form__title reg-form__title">Регистрация</h2>
-                    <input class="form__input reg-form__input" type="tel" placeholder="Телефон" name="phone"
-                        id="reg-phone">
-                    <span class="form__error" id="reg-phone-error">Введите номер в формате +7(ххх)-ххх-хх-хх</span>
-                    <input type="email" class="form__input reg-form__input" placeholder="Электронная почта" name="email"
-                        id="reg-email">
-                    <span class="form__error" id="reg-email-error">Введите почту</span>
-                    <input type="password" class="form__input reg-form__input" placeholder="Пароль" name="password"
-                        id="reg-password">
-                    <span class="form__error" id="reg-password-error">Введите пароль</span>
-                    <input type="password" class="form__input reg-form__input" placeholder="Повторите пароль"
-                        name="password-confirmation" id="reg-password-confirmation">
-                    <span class="form__error" id="reg-password-confirmation-error">Пароли должны совпадать</span>
+                    <div class="form__field reg-form__field">
+                        <input class="form__input reg-form__input" type="tel" placeholder="Телефон" name="phone"
+                            autocomplete="off" id="reg-phone">
+                        <small class="form__error"></small>
+                    </div>
+                    <div class="form__field reg-form__field">
+                        <input type="email" class="form__input reg-form__input" placeholder="Электронная почта"
+                            name="email" autocomplete="off" id="reg-email">
+                        <small class="form__error"></small>
+                    </div>
+                    <div class="form__field reg-form__field">
+                        <input type="password" class="form__input reg-form__input" placeholder="Пароль" name="password"
+                            autocomplete="off" id="reg-password">
+                        <small class="form__error"></small>
+                    </div>
+                    <div class="form__field reg-form__field">
+                        <input type="password" class="form__input reg-form__input" placeholder="Повторите пароль"
+                            name="password-confirmation" autocomplete="off" id="reg-password-confirmation">
+                        <small class="form__error"></small>
+                    </div>
                     <button type="submit"
                         class="form__btn reg-form__btn btn-reset connect-btn">Зарегистрироваться</button>
                     <button class="form__btn-close reg-form__btn-close btn-reset"></button>

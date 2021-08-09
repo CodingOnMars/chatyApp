@@ -1,7 +1,9 @@
 .popup {
     position: fixed;
-    top: 22%;
+    top: 20%;
     left: 50%;
+    width: 100%;
+    max-width: 340px;
     transform: translate(-50%, -22%);
     z-index: 10;
 }
@@ -10,7 +12,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 70px;
+    padding: 50px;
     background-color: $white;
 
 
@@ -27,7 +29,7 @@
     }
 
     &__input {
-        max-width: 340px;
+        width: 100%;
         margin-bottom: 10px;
         padding: 8px 20px;
         color: $primary-color;
@@ -36,9 +38,13 @@
         border-radius: 5px;
     }
 
-    &__input--error {
+    &__field.error &__input {
         background-color: $error-bg;
         border: 1px solid $red-color;
+    }
+
+    &__field.valid &__input {
+        border: 1px solid $green-color;
     }
 
     &__error {
@@ -73,8 +79,8 @@
 
     &__btn-close {
         position: absolute;
-        top: 20px;
-        right: 30px;
+        top: 10px;
+        right: 20px;
         width: 20px;
         height: 30px;
 
@@ -96,3 +102,9 @@
         }
     }
 }
+
+// .reg-form {
+//     &__input {
+//         width: 100%;
+//     }
+// }
