@@ -20,13 +20,8 @@ const formErrors = document.querySelectorAll('.form__error');
 const overlay = document.querySelector('.overlay');
 
 // Open/close login/registration forms
-const loginBtn = document.querySelector('.login-btn');
 const popupLogin = document.querySelector('.popup-login');
-const btnCloseLoginForm = document.querySelector('.login-form__btn-close');
-
-const regBtn = document.querySelector('.register-btn');
 const popupReg = document.querySelector('.popup-reg');
-const btnCloseRegForm = document.querySelector('.reg-form__btn-close');
 
 const openForm = popup => {
 	popup.classList.remove('hidden');
@@ -40,28 +35,26 @@ const closeForm = popup => {
 	overlay.classList.add('hidden');
 };
 
-loginBtn.addEventListener('click', () => {
-	openForm(popupLogin);
-	clearErrors();
-});
+document.addEventListener('click', e => {
+	if (
+		!e.target.matches('.login-btn, .register-btn, .form__btn-close, .overlay')
+	)
+		return;
 
-btnCloseLoginForm.addEventListener('click', () => {
-	closeForm(popupLogin);
-});
+	if (e.target.classList.contains('login-btn')) {
+		openForm(popupLogin);
+		clearErrors();
+	}
 
-regBtn.addEventListener('click', () => {
-	openForm(popupReg);
-	clearErrors();
-});
+	if (e.target.classList.contains('register-btn')) {
+		openForm(popupReg);
+		clearErrors();
+	}
 
-btnCloseRegForm.addEventListener('click', () => {
-	closeForm(popupReg);
-});
-
-// Close a form by clicking outside of the form
-overlay.addEventListener('click', () => {
-	closeForm(popupLogin);
-	closeForm(popupReg);
+	if (e.target.matches('.form__btn-close, .overlay')) {
+		closeForm(popupLogin);
+		closeForm(popupReg);
+	}
 });
 
 // Login form validation
@@ -93,7 +86,7 @@ regForm.addEventListener('submit', e => {
 	let isPhoneValid = checkPhone(regPhone),
 		isEmailValid = checkEmail(),
 		isPasswordValid = checkPassword(regPassword),
-		isConfirmPasswordValid = checkConfirmPassowrd();
+		isConfirmPasswordValid = checkConfirmPassword();
 
 	let isFormValid =
 		isPhoneValid && isEmailValid && isPasswordValid && isConfirmPasswordValid;
@@ -125,7 +118,7 @@ function isPasswordSecure(password) {
 	return re.test(password);
 }
 
-// Show error message, highligh input field with red color
+// Show error message, highlight input field with red color
 function showError(input, message) {
 	const formField = input.parentElement;
 	const errorMessage = formField.querySelector('small');
@@ -137,7 +130,7 @@ function showError(input, message) {
 	errorMessage.textContent = message;
 }
 
-// Remove error message, highligh input field with green color
+// Remove error message, highlight input field with green color
 function showValid(input) {
 	const formField = input.parentElement;
 	const errorMessage = formField.querySelector('small');
@@ -221,7 +214,7 @@ function checkPassword(password) {
 }
 
 // Validate password confirmation for registartion form
-function checkConfirmPassowrd() {
+function checkConfirmPassword() {
 	let valid = false;
 
 	const confirmPassword = regPasswordConfirmation.value.trim();
