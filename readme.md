@@ -2,7 +2,7 @@
 
 ![Chaty website picture](https://github.com/CodingOnMars/chatyApp/blob/main/app/images/mockup-readme.png)
 
-Click to open a live version [](https://marscoding.vercel.app/project-8/index.html) 🠒
+[Click to open a live version](https://marscoding.vercel.app/project-8/index.html) 🠒
 
 I created this landing page to demonstrate work of JavaScript client side form validation.
 
