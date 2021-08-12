@@ -16,6 +16,7 @@ window.addEventListener('scroll', () => {
 // Common classes
 const menuBurger = document.querySelector('.menu-burger');
 const formFields = document.querySelectorAll('.form__field');
+const formInputs = document.querySelectorAll('.form__input');
 const formErrors = document.querySelectorAll('.form__error');
 const overlay = document.querySelector('.overlay');
 
@@ -113,7 +114,7 @@ function isPhoneCorrect(phone) {
 // Check if password contains at least 8 characters. including at least one lower case letter, one uppercase letter, one number, one symbol
 function isPasswordSecure(password) {
 	const re = new RegExp(
-		'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})'
+		'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&?])(?=.{8,})'
 	);
 	return re.test(password);
 }
@@ -232,13 +233,16 @@ function checkConfirmPassword() {
 	return valid;
 }
 
-// Clear error messages, remove input highlight
+// Clear error messages and input data, remove input highlight
 function clearErrors() {
 	formErrors.forEach(el => {
 		el.classList.remove('form__error--active');
 	});
 	formFields.forEach(el => {
-		el.classList.remove('error');
+		el.classList.remove('error', 'valid');
+	});
+	formInputs.forEach(el => {
+		el.value = '';
 	});
 }
 
