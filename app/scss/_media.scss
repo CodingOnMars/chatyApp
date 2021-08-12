@@ -227,27 +227,32 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .login-btn {
-        transition: color .3s ease, background-color .3s ease-in-out;
+
+    .login-btn,
+    .register-btn {
+        transition: color .5s ease, background-color .5s ease-in-out;
 
         &:hover {
-            color: $footer-gray;
-            background-color: $hover-purple;
+            transition: color .5s ease, background-color .5s ease-in-out;
         }
     }
 
-    .register-btn,
-    .connect-btn {
-        transition: background-color .3s ease-in-out;
+    .login-btn:hover {
+        color: $footer-gray;
+        background-color: $hover-purple;
     }
 
-    .register-btn {
-        border: 1px solid transparent;
+    .register-btn:hover {
+        color: $primary-color;
+        background-color: $active-blue;
+    }
+
+    .connect-btn {
+        transition: background-color .5s linear;
 
         &:hover {
-            color: $accent-color;
-            background-color: $footer-gray;
-            border: 1px solid $accent-color;
+            background-color: $hover-blue;
+            transition: background-color .5s linear;
         }
     }
 
@@ -258,24 +263,25 @@
     .menu__link,
     .footer__list-link,
     .copyright__link {
-        transition: color .3s ease-in-out;
+        transition: color .5s ease-in-out;
+
+        &:hover {
+            transition: color .5s ease-in-out;
+        }
     }
 
     .menu__link:hover {
         color: $hover-purple;
     }
 
-    .connect-btn:hover {
-        background-color: $hover-blue;
-    }
-
     .plans__item,
     .setup__item {
         transform: translateZ(0);
-        transition: transform 0.25s ease-out;
+        transition: transform 0.25s ease-out, color .5s, background-color .5s;
 
         &:hover {
             transform: scale(1.05);
+            transition: transform 0.25s ease-out, color .5s, background-color .5s;
 
             .price__title {
                 color: $white;
